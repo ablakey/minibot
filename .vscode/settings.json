@@ -1,0 +1,5 @@
+{
+  "arduino.path": "/home/ablakey/Arduino/",
+  "arduino.commandPath": "arduino-cli",
+  "arduino.useArduinoCli": true,
+}

@@ -1,6 +1,4 @@
 {
   "board": "pololu-a-star:avr:a-star32U4",
-  "arduino.path": "/home/ablakey/Arduino/",
-  "arduino.commandPath": "arduino-cli",
-  "arduino.useArduinoCli": true
+  "port": "/dev/ttyACM0"
 }
