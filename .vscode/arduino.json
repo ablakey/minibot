@@ -1,4 +1,5 @@
 {
   "board": "pololu-a-star:avr:a-star32U4",
-  "port": "/dev/ttyACM0"
+  "port": "/dev/ttyACM0",
+  "sketch": "mcb/mcb.ino"
 }
