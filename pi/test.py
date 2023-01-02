@@ -22,7 +22,9 @@ app = Flask(__name__)
 # initialize the video stream and allow the camera sensor to
 # warmup
 # vs = VideoStream(usePiCamera=1).start()
-vs = VideoStream(src=0).start()
+vs = VideoStream(src=0, framerate=15).start()
+vs.stream.set(3, 320)
+vs.stream.set(4, 240)
 time.sleep(2.0)
 
 
@@ -65,8 +67,8 @@ def detect_motion(frameCount):
 
         if time.time() - t0 > 1:
             t0 = time.time()
-            total = 0
             print(total)
+            total = 0
 
         # if the total number of frames has reached a sufficient
         # number to construct a reasonable background model, then
