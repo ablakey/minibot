@@ -9,7 +9,8 @@ import cv2
 import imutils
 from flask import Flask, Response, render_template
 from imutils.video import VideoStream
-from pyimagesearch.motion_detection.singlemotiondetector import SingleMotionDetector
+
+# from pyimagesearch.motion_detection.singlemotiondetector import SingleMotionDetector
 
 # initialize the output frame and a lock used to ensure thread-safe
 # exchanges of the output frames (useful when multiple browsers/tabs
@@ -37,7 +38,7 @@ def detect_motion(frameCount):
     global vs, outputFrame, lock
     # initialize the motion detector and the total number of frames
     # read thus far
-    md = SingleMotionDetector(accumWeight=0.1)
+    # md = SingleMotionDetector(accumWeight=0.1)
     total = 0
 
     # loop over frames from the video stream
@@ -65,7 +66,8 @@ def detect_motion(frameCount):
         # continue to process the frame
         if total > frameCount:
             # detect motion in the image
-            motion = md.detect(gray)
+            # motion = md.detect(gray)
+            motion = None
             # check to see if motion was found in the frame
             if motion is not None:
                 # unpack the tuple and draw the box surrounding the
@@ -75,7 +77,7 @@ def detect_motion(frameCount):
 
         # update the background model and increment the total number
         # of frames read thus far
-        md.update(gray)
+        # md.update(gray)
         total += 1
         # acquire the lock, set the output frame, and release the
         # lock
