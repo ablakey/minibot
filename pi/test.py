@@ -40,6 +40,7 @@ def detect_motion(frameCount):
     # read thus far
     # md = SingleMotionDetector(accumWeight=0.1)
     total = 0
+    t0 = time.time()
 
     # loop over frames from the video stream
     while True:
@@ -61,6 +62,11 @@ def detect_motion(frameCount):
         #     (0, 0, 255),
         #     1,
         # )
+
+        if time.time() - t0 > 1:
+            t0 = time.time()
+            total = 0
+            print(total)
 
         # if the total number of frames has reached a sufficient
         # number to construct a reasonable background model, then
